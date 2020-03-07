@@ -1,0 +1,8 @@
+:root{
+  --primary-color: antiquewhite;
+  --secondary-color: #ccc
+
+  --gutter: 16px; /*czyli marginesy*/
+ --image-url: url("....") /* tez do zdjęcia*/
+
+}
