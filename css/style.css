@@ -12,12 +12,12 @@ html {
 .container {
   width: 100%;
   height: 100%;
-  background-image: url("../img/max-saeling.jpg");
+  background-image: url("../img/lachlan.jpg");
   background-size: cover;
   background-position: center;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 50px 4fr 1fr;
+  grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+  grid-template-rows: 70px 2.5fr 1fr;
   grid-template-areas:
     "nav nav . search search"
     "main main player player player"
@@ -26,44 +26,47 @@ html {
 .nav {
   grid-area: nav;
 }
-.menu {
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
-  list-style-type: none;
-  align-items: center;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-}
-.menu__item {
-  width: 100%;
-  background-color: transparent;
-  border: 1px solid blue;
-}
-
-.lookFor {
-  grid-area: search;
-}
+.menu,
 .search {
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
   list-style-type: none;
   align-items: center;
-  height: 50px;
-  line-height: 50px;
+  height: 70px;
+  line-height: 70px;
   text-align: center;
+}
+
+.menu__item {
+  width: 100%;
+  /* background-color: transparent; */
+  border: 1px solid blue;
+  text-shadow: 1px 1px black;
+}
+.menu__item:first-child {
+  backdrop-filter: blur(4px);
+}
+
+.lookFor {
+  grid-area: search;
 }
 .search__item {
   width: 100%;
   background-color: transparent;
   border: 1px solid black;
+  text-shadow: 1px 1px black;
+}
+.search__item:first-child {
+  font-weight: bold;
 }
 .search__link,
 .menu__link {
   text-decoration: none;
-  color: black;
+  color: white;
+}
+.menu__item:nth-child(2) {
+  font-weight: bold;
 }
 .main {
   grid-area: main;
@@ -74,23 +77,39 @@ html {
   padding: var(--gutter);
 }
 .ventrix {
+  font-family: Arial, Helvetica, sans-serif;
   width: 100%;
-  font-size: 32px;
-  color: aliceblue;
-  text-shadow: 1px 1px black;
+  font-size: 44px;
+  color: snow;
+  /* text-shadow: 1px 1px black; */
   padding-left: 32px;
+  padding-bottom: 20px;
+}
+.ventrix__line {
+  border: 1px solid lightgray;
+  background-color: lightgray;
+  border-radius: 20%;
+  opacity: 0.8;
+  width: 30px;
+  align-self: flex-start;
+  margin-left: 35px;
 }
 .content {
-  width: 100%;
+  width: 70%;
   padding-top: 16px;
   padding-left: 32px;
   font-size: 16px;
-  color: aliceblue;
-  text-shadow: 2px 2px black;
+  font-family: Arial, Helvetica, sans-serif;
+  color: lightgrey;
+  text-shadow: 1px 1px black;
+  align-self: flex-start;
 }
 
 .player {
   grid-area: player;
+}
+.player__source {
+  color: aqua;
 }
 .footer {
   grid-area: footer;
@@ -114,11 +133,13 @@ html {
   color: var(--primary-color);
 }
 .footer--2 {
-  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.1);
   font-size: 10px;
 }
 .footer--3 {
-  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.1);
 }
 .footer--4 {
   color: var(--primary-color);
