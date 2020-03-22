@@ -9,6 +9,7 @@ html {
   width: 100%;
   height: 100%;
 }
+
 .container {
   width: 100%;
   height: 100%;
@@ -23,9 +24,11 @@ html {
     "main main player player player"
     "footer footer footer footer footer";
 }
+
 .nav {
   grid-area: nav;
 }
+
 .menu,
 .search {
   display: flex;
@@ -41,9 +44,10 @@ html {
 .menu__item {
   width: 100%;
   /* background-color: transparent; */
-  border: 1px solid blue;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   text-shadow: 1px 1px black;
 }
+
 .menu__item:first-child {
   backdrop-filter: blur(4px);
 }
@@ -51,23 +55,28 @@ html {
 .lookFor {
   grid-area: search;
 }
+
 .search__item {
   width: 100%;
   background-color: transparent;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   text-shadow: 1px 1px black;
 }
+
 .search__item:first-child {
   font-weight: bold;
 }
+
 .search__link,
 .menu__link {
   text-decoration: none;
   color: white;
 }
+
 .menu__item:nth-child(2) {
   font-weight: bold;
 }
+
 .main {
   grid-area: main;
   display: flex;
@@ -76,6 +85,7 @@ html {
   justify-content: center;
   padding: var(--gutter);
 }
+
 .ventrix {
   font-family: Arial, Helvetica, sans-serif;
   width: 100%;
@@ -85,6 +95,7 @@ html {
   padding-left: 32px;
   padding-bottom: 20px;
 }
+
 .ventrix__line {
   border: 1px solid lightgray;
   background-color: lightgray;
@@ -94,6 +105,7 @@ html {
   align-self: flex-start;
   margin-left: 35px;
 }
+
 .content {
   width: 70%;
   padding-top: 16px;
@@ -108,39 +120,103 @@ html {
 .player {
   grid-area: player;
 }
-.player__source {
-  color: aqua;
+
+.player__controls {
+  position: relative;
+  left: 40%;
+  top: 40%;
 }
+
+
 .footer {
   grid-area: footer;
   display: flex;
   flex-wrap: wrap;
   justify-content: stretch;
   align-items: center;
-  border: 1px solid lightsalmon;
+  /* border: 1px solid lightsalmon; */
 }
+
 .footer__box {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 10px;
-  border: 1px dotted red;
+  /* border: 1px dotted red; */
   width: 25%;
   height: 100%;
   flex-direction: column;
 }
+
 .footer--1 {
   color: var(--primary-color);
 }
+
+.stars {
+  display: flex;
+  font-size: 1.2rem;
+
+}
+
+.star__num {
+  font-size: 1.4rem;
+}
+
+.star:before {
+  content: '\2b50';
+}
+
 .footer--2 {
   backdrop-filter: blur(4px);
   background: rgba(255, 255, 255, 0.1);
   font-size: 10px;
 }
+
 .footer--3 {
   backdrop-filter: blur(4px);
   background: rgba(255, 255, 255, 0.1);
 }
+
 .footer--4 {
-  color: var(--primary-color);
+  color: black;
+  background-image: url('../img/nathan-mcbride-j9-LkCanIx0-unsplash.jpg');
+  background-size: cover;
+}
+
+
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px auto 1fr;
+    grid-template-areas:
+      "nav"
+      "search"
+      "main"
+      "player"
+      "footer";
+  }
+
+  .menu,
+  .search {
+    line-height: 40px;
+  }
+
+  .search__item {
+    border-top: none;
+  }
+
+  .player {
+    margin: 40px auto;
+  }
+
+  .player__controls {
+    left: 0;
+    top: 0;
+
+  }
+
+  .footer__box {
+    width: 100%;
+  }
 }
